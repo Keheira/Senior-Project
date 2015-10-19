@@ -1,0 +1,14 @@
+.options {
+    list-style-type: none;
+}
+.options li{
+    
+    display: inline-block;
+}
+.options button{
+    
+    display: inline-block;   
+}
+input {
+ text-align: right;   
+}
