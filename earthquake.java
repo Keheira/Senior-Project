@@ -7,7 +7,7 @@ public class Epicenter{
 	double timeA, timeB, timeC, d, inputX, inputY;
 	double Ax, Ay, Bx, By, Cx, Cy, Ex, Ey;
 	Random rand;
-	Scanner input = new Scenner(System.in);
+	Scanner input = new Scanner(System.in);
 
 	/*Rndomize center points*/
 	//center A location
