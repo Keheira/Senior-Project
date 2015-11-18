@@ -9,12 +9,12 @@
             style="border:1px solid #000000;">
     </canvas>
     <div>
-        <div>
+       <!-- <div>
             <ul class="options">
                 <li><a>Way #1</a></li>
                 <li><a>Way #2</a></li>
             </ul>
-        </div>
+        </div> -->
         <div class="option 1"><!--Content Div;Maybe put all contents in seperate divs-->
             <b>A</b><br/>
             <b>X:</b><input readonly type="text" id="ax"> <b>Y:</b><input readonly type="text" id="ay"><br/>
@@ -24,11 +24,12 @@
             <b>X:</b><input readonly type="text" id="cx"> <b>Y:</b><input readonly type="text" id="cy"><br/>
             <b>Quake Location</b><br/>
             <b>X:</b><input type="number" id="qx"> <b>Y:</b><input type="number" id="qy">
+            <h6 id="qz"></h6>
         </div>
     </div>
     <div class="options">
         <button onclick="wei()">Quake!!!</button>
-        <button>Submit</button>
+        <button onclick="checker()">Submit</button>
         <button>Reset</button>
     </div>
     

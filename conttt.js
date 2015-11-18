@@ -1,4 +1,9 @@
+var clicked = false;
+var ansx = 0;
+var ansy = 0;
+
 function wei(){
+    if(clicked == false){
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     //random numbers function
@@ -29,4 +34,22 @@ function wei(){
     ctx.arc(100,200,5,0,Math.PI*2);
     ctx.fill();
     ctx.closePath();
+        
+        
+    //calculate
+    ansx = 100;
+    ansy = 200;
+    clicked = true;   
+    }
+}
+
+function checker(){
+    var userX = document.getElementById('qx');
+    var userY = document.getElementById('qy');
+    var correct = document.getElementById('qz');
+    if(ansx == userX && ansy == userY){
+            correct.innerHTML = "correct";
+    }else{
+            correct.innerHTML ="incorrect";   
+    }
 }
