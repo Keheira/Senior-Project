@@ -1,7 +1,23 @@
 var clicked = false;
 var ex = 0;
 var ey = 0;
+<SCRIPT LANGUAGE="JavaScript1.2">
 
+
+function shake(n) {
+if (parent.moveBy) {
+for (i = 30; i > 0; i--) {
+for (j = n; j > 0; j--) {
+parent.moveBy(0,i);
+parent.moveBy(i,0);
+parent.moveBy(0,-i);
+parent.moveBy(-i,0);
+         }
+      }
+   }
+}
+
+</script>
 function wei(){
     if(clicked == false){
         var vel = 10;
