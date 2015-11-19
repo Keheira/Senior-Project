@@ -1,7 +1,7 @@
 var clicked = false;
 var ex = 0;
 var ey = 0;
-<SCRIPT LANGUAGE="JavaScript1.2">
+//<SCRIPT LANGUAGE="JavaScript1.2">
 
 
 function shake(n) {
@@ -17,7 +17,7 @@ parent.moveBy(-i,0);
    }
 }
 
-</script>
+//</script>
 function wei(){
     if(clicked == false){
         var vel = 10;
