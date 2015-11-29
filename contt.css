@@ -2,7 +2,7 @@ body{
     text-align: center;
 }
 canvas{
-    background: url(cali.jpg);
+   
 }
 .options {
     list-style-type: none;
@@ -17,4 +17,7 @@ canvas{
 }
 input {
  text-align: right;   
+}
+#mycanvas{
+    
 }

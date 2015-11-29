@@ -6,7 +6,6 @@ var ey = 0;
 
 function shake(n) {
 var el = document.getElementById("myCanvas");
-    
 if (el.moveBy) {
 for (i = 30; i > 0; i--) {
 for (j = n; j > 0; j--) {
@@ -82,26 +81,66 @@ function rng(min,max){
     return Math.floor(Math.random() *(max-min+1))+min;
 }
 
-function checker(){
+function checker(num){
+    var cheer = new Audio();
+        cheer.src = "applause-3.mp3";
+    var wrong = new Audio();
+        wrong.src = "fart-03.mp3";
     if(clicked == true){
     var userX = document.getElementById('qx');
     var userY = document.getElementById('qy');
     var correct = document.getElementById('qz');
     if(ex == userX.value && ey == userY.value){
             correct.innerHTML = "correct";
+        cheer.play();
+        var div1 = document.getElementById("div1");
+            div1.innerHTML = "it worked for " + num;
     }else{
-            correct.innerHTML ="incorrect";   
+            correct.innerHTML ="incorrect";
+        wrong.play();
+        var div1 = document.getElementById("div1");
+            div1.innerHTML = "it worked for " + num;
     }
     }
 }
 
-function reset(){
+function reset(num){
     clicked = false;
     wei();
+    
+    var choir = new Audio();
+    choir.src = "HeavenlyChoir.mp3";
+    choir.play();
     var userX = document.getElementById('qx');
     var userY = document.getElementById('qy');
     var correct = document.getElementById('qz');
     userX.value = "";
     userY.value = "";
     correct.innerHTML="";
+    
+        var div1 = document.getElementById("div1");
+            div1.innerHTML = "it worked for " + num;
+}
+function pretty(){
+var myName = "Where's That Earthquake?!?!";
+
+var red = [0, 100, 63];
+var orange = [40, 100, 60];
+var green = [75, 100, 40];
+var blue = [196, 77, 55];
+var purple = [280, 50, 60];
+var letterColors = [red, orange, green, blue, purple];
+
+CanvasRenderingContext2D.drawName(myName, letterColors);
+
+if(10 < 3)
+{
+    bubbleShape = 'square';
+}
+else
+{
+    bubbleShape = 'circle';
+}
+
+bounceBubbles();
 }
