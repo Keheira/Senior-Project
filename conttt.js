@@ -121,7 +121,7 @@ function reset(num){
         var div1 = document.getElementById("div1");
             div1.innerHTML = "it worked for " + num;
 }
-function pretty(){
+/*function pretty(){
 var myName = "Where's That Earthquake?!?!";
 
 var red = [0, 100, 63];
@@ -144,3 +144,4 @@ else
 
 bounceBubbles();
 }
+*/
