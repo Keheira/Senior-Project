@@ -5,13 +5,15 @@ var ey = 0;
 
 
 function shake(n) {
-if (parent.moveBy) {
+var el = document.getElementById("myCanvas");
+    
+if (el.moveBy) {
 for (i = 30; i > 0; i--) {
 for (j = n; j > 0; j--) {
-parent.moveBy(0,i);
-parent.moveBy(i,0);
-parent.moveBy(0,-i);
-parent.moveBy(-i,0);
+el.moveBy(0,i);
+el.moveBy(i,0);
+el.moveBy(0,-i);
+el.moveBy(-i,0);
          }
       }
    }
@@ -62,7 +64,7 @@ function wei(){
         ey = rng(100,200);
         //calculate times
         distance = Math.sqrt(Math.pow(coordA[0].value-ex, 2)+Math.pow(coordA[1].value-ey, 2));
-        times[0].value = distance/vel;
+        times[0].value = (distance/vel).tofix(2);
 
         distance = Math.sqrt(Math.pow(coordB[0].value-ex, 2)+Math.pow(coordB[1].value-ey, 2));
         times[1].value = distance/vel;
