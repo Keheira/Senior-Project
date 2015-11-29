@@ -25,7 +25,7 @@ function wei(){
         var distance = 0;
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
-
+        
 
         var coordA = [document.getElementById('ax'), document.getElementById('ay')];
         var coordB = [document.getElementById('bx'), document.getElementById('by')];
@@ -63,7 +63,7 @@ function wei(){
         ey = rng(100,200);
         //calculate times
         distance = Math.sqrt(Math.pow(coordA[0].value-ex, 2)+Math.pow(coordA[1].value-ey, 2));
-        times[0].value = (distance/vel).tofix(2);
+        times[0].value = (distance/vel);
 
         distance = Math.sqrt(Math.pow(coordB[0].value-ex, 2)+Math.pow(coordB[1].value-ey, 2));
         times[1].value = distance/vel;
@@ -81,7 +81,7 @@ function rng(min,max){
     return Math.floor(Math.random() *(max-min+1))+min;
 }
 
-function checker(num){
+function checker(){
     var cheer = new Audio();
         cheer.src = "applause-3.mp3";
     var wrong = new Audio();
@@ -104,7 +104,7 @@ function checker(num){
     }
 }
 
-function reset(num){
+function reset(){
     clicked = false;
     wei();
     
@@ -118,29 +118,27 @@ function reset(num){
     userY.value = "";
     correct.innerHTML="";
     
-        var div1 = document.getElementById("div1");
-            div1.innerHTML = "it worked for " + num;
 }
-function pretty(){
-var myName = "Where's That Earthquake?!?!";
-
-var red = [0, 100, 63];
-var orange = [40, 100, 60];
-var green = [75, 100, 40];
-var blue = [196, 77, 55];
-var purple = [280, 50, 60];
-var letterColors = [red, orange, green, blue, purple];
-
-CanvasRenderingContext2D.drawName(myName, letterColors);
-
-if(10 < 3)
-{
-    bubbleShape = 'square';
-}
-else
-{
-    bubbleShape = 'circle';
-}
-
-bounceBubbles();
-}
+//function pretty(){
+//var myName = "Where's That Earthquake?!?!";
+//
+//var red = [0, 100, 63];
+//var orange = [40, 100, 60];
+//var green = [75, 100, 40];
+//var blue = [196, 77, 55];
+//var purple = [280, 50, 60];
+//var letterColors = [red, orange, green, blue, purple];
+//
+//CanvasRenderingContext2D.drawName(myName, letterColors);
+//
+//if(10 < 3)
+//{
+//    bubbleShape = 'square';
+//}
+//else
+//{
+//    bubbleShape = 'circle';
+//}
+//
+//bounceBubbles();
+//}
