@@ -25,29 +25,41 @@ ul#menu li a:hover {
 }
 </style>
     <body>
-<<<<<<< HEAD
         <ul id="menu">
-  <li><a href="main.html">New Game</a></li>
-  <!--<li><a href="index.html">Distance Formula?</a></li>-->
-  <li><a href="epicenter.html">Epicenter?</a></li>
-  <li><a href="/php/default.asp">Hint</a></li>
-</ul>  
-        <h1> Step 1: Intro to the Distance Formula</h1>
-<!--
-        <video width="320" height="240" autoplay>
-            <source src="distance.mp4" type="video/mp4">
-        </video>
--->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/nyZuite17Pc" frameborder="0" allowfullscreen></iframe>
-        <br />
-        <button onclick="onNext">Next</button>
-=======
+          <li><a href="main.html">New Game</a></li>
+          <li><a href="index.html">Distance Formula?</a></li>
+          <li><a href="epicenter.html">Epicenter?</a></li>
+          <li><a href="/php/default.asp">Hint</a></li>
+        </ul>
         <div id="video">
             <h1> Step 1: Intro to the Distance Formula</h1>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/nyZuite17Pc" frameborder="0" allowfullscreen></iframe>
-            <br />
+            <br /><br />
             <button onclick="onNext">Next</button>
         </div>
->>>>>>> origin/master
+        <div id="practice">
+            <h1> Step 2: Distance Formula Practice</h1>
+            <div id="points">
+                <div>
+                    <label><b>Point A</b></label><br /><br />
+                    <label>X:</label><label type="text" id="ax"></label>
+                    <label>Y:</label><label type="text" id="ay"></label>
+                </div>
+                <div>
+                    <label><b>Point B</b></label><br /><br />
+                    <label>X:</label><label type="text" id="ax"></label>
+                    <label>Y:</label><label type="text" id="ay"></label>
+                </div>
+                <div>
+                    <label><b>Point C</b></label><br /><br />
+                    <label>X:</label><label type="text" id="ax"></label>
+                    <label>Y:</label><label type="text" id="ay"></label>
+                </div>
+            </div>
+            <br />
+            <button onclick="onPrev">Previous</button>
+            <button onclick="onItem">Next Step</button>
+            <button onclick="onNext2" id="problem">Next</button>
+        </div>
     </body>
 </html>

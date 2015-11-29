@@ -1,8 +1,37 @@
 body{
     text-align: center;
+    background-color:rgb(128,0,0)
 }
 
-#video{
-    padding-top: 50%;
-    padding-bottom: 50%;
+#menu {
+    padding: 0;
+}
+
+#menu li {
+    display: inline;
+}
+
+#menu li a {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px 4px 0 0;
+}
+
+#menu li a:hover {
+    background-color: orange;
+}
+
+#video, #practice{
+    padding-top: 250px;
+}
+
+#points{
+    display: flex;
+    justify-content:space-between;
+}
+
+#poits div{
+    white-space:nowrap;
 }
