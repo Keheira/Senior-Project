@@ -1,3 +1,8 @@
 body{
     text-align: center;
 }
+
+#video{
+    padding-top: 50%;
+    padding-bottom: 50%;
+}
