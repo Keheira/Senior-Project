@@ -98,8 +98,8 @@ function checker(){
     }else{
             correct.innerHTML ="incorrect";
         wrong.play();
-        var div1 = document.getElementById("div1");
-            div1.innerHTML = "it worked for " + num;
+//        var div1 = document.getElementById("div1");
+//            div1.innerHTML = "it worked for " + num;
     }
     }
 }
