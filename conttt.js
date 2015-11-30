@@ -94,7 +94,7 @@ function checker(){
             correct.innerHTML = "correct";
         cheer.play();
         var div1 = document.getElementById("div1");
-            div1.innerHTML = "it worked for " + num;
+            //div1.innerHTML = "it worked for " + num;
     }else{
             correct.innerHTML ="incorrect";
         wrong.play();
@@ -104,7 +104,7 @@ function checker(){
     }
 }
 
-function reset(){
+function resett(){
     clicked = false;
     wei();
     
