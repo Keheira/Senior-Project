@@ -103,6 +103,16 @@ function checker(){
     }
 }
 
+function checkNum(event) {
+   if((event.charCode===0 || !isNaN(String.fromCharCode(event.charCode)))&&event.charCode!=32) {
+       return true;
+   }
+    else {
+        return false;
+    }
+    
+}
+
 function resett(){
     
     var oldCanvas = document.getElementById("myCanvas");
