@@ -49,6 +49,13 @@ ul#menu li a {
 ul#menu li a:hover {
     background-color: orange;
 }
+    div#div1{
+        color: aqua;
+        font-size: 25px;
+    }
+    h2{
+        color:aqua;
+    }
 </style>
     
 <div align="center">
@@ -60,10 +67,10 @@ ul#menu li a:hover {
   <li><a href="main.html">New Game</a></li>
   <li><a href="index.html">Distance Formula?</a></li>
   <li><a href="epicenter.html">Epicenter?</a></li>
-  <li><a href="/php/default.asp">Hint</a></li>
+  <li><a href="#">Hint</a></li>
 </ul>  
 <body>
-    <h1>Where's That Earthquake ?!?!</h1>
+    <h1 style="color:chocolate">Where's That Earthquake ?!?!</h1>
     <div id="canvasArea">
     <canvas id="myCanvas" width="500" height="400"
             style="border:1px solid #000000;  background: url(cali.jpg)">
@@ -89,7 +96,7 @@ ul#menu li a:hover {
                 
                 <label><b>Earthquake Epicenter</b></label><br />
                 <label>X:</label><input type="number" id="qx"> <label>Y:</label><input type="number" id="qy">
-                <h6 id="qz"></h6>
+                <h2 id="qz"></h2>
 <!--                <div class="options">
                     <button onclick="wei()">Quake!!!</button>-->
              <nav id="nav1">
