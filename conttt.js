@@ -63,13 +63,16 @@ function wei(){
         ey = rng(100,200);
         //calculate times
         distance = Math.sqrt(Math.pow(coordA[0].value-ex, 2)+Math.pow(coordA[1].value-ey, 2));
-        times[0].value = (distance/vel);
+        var time = (distance/vel);
+        times[0].value = timm.toFixed(2);
 
         distance = Math.sqrt(Math.pow(coordB[0].value-ex, 2)+Math.pow(coordB[1].value-ey, 2));
-        times[1].value = distance/vel;
+        time = (distance/vel);
+        times[1].value = timm.toFixed(2);
 
         distance = Math.sqrt(Math.pow(coordC[0].value-ex, 2)+Math.pow(coordC[1].value-ey, 2));
-        times[2].value = distance/vel;
+        time = (distance/vel);
+        times[2].value = timm.toFixed(2);
 
         console.log(ex);
         console.log(ey);
