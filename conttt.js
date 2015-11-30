@@ -1,7 +1,6 @@
 var clicked = false;
 var ex = 0;
 var ey = 0;
-//<SCRIPT LANGUAGE="JavaScript1.2">
 
 
 function shake(n) {
@@ -64,15 +63,15 @@ function wei(){
         //calculate times
         distance = Math.sqrt(Math.pow(coordA[0].value-ex, 2)+Math.pow(coordA[1].value-ey, 2));
         var time = (distance/vel);
-        times[0].value = timm.toFixed(2);
+        times[0].value = time.toFixed(2);
 
         distance = Math.sqrt(Math.pow(coordB[0].value-ex, 2)+Math.pow(coordB[1].value-ey, 2));
         time = (distance/vel);
-        times[1].value = timm.toFixed(2);
+        times[1].value = time.toFixed(2);
 
         distance = Math.sqrt(Math.pow(coordC[0].value-ex, 2)+Math.pow(coordC[1].value-ey, 2));
         time = (distance/vel);
-        times[2].value = timm.toFixed(2);
+        times[2].value = time.toFixed(2);
 
         console.log(ex);
         console.log(ey);
@@ -97,18 +96,21 @@ function checker(){
             correct.innerHTML = "correct";
         cheer.play();
         var div1 = document.getElementById("div1");
-            //div1.innerHTML = "it worked for " + num;
     }else{
             correct.innerHTML ="incorrect";
         wrong.play();
-//        var div1 = document.getElementById("div1");
-//            div1.innerHTML = "it worked for " + num;
     }
     }
 }
 
 function resett(){
+    
+    var oldCanvas = document.getElementById("myCanvas");
+    var ctx = oldCanvas.getContext("2d");
+    ctx.clearRect(0,0,oldCanvas.width,oldCanvas.height);
+    
     clicked = false;
+    
     wei();
     
     var choir = new Audio();
