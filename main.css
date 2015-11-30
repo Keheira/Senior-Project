@@ -2,9 +2,7 @@ body{
     text-align: center;
     background-color:rgb(128,0,0)
 }
-h1{
-    color:chocolate;
-}
+
 #menu {
     padding: 0;
 }
@@ -32,8 +30,4 @@ h1{
 
 #poits div{
     white-space:nowrap;
-}
-label{
-    font-size: 20px;
-    color:aqua;
 }
