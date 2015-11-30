@@ -3,10 +3,19 @@ $(document).ready(function(){
     $("#video").show();
     $("#practice").hide();
     
+    // Get window height and width.
+    var h = $(window).height();
+    var w = $(window).width();
+    
+    $("#video").css('top', h/2-$("#video").height()/2);
+    $("#video").css('left', w/2-$("#video").width()/2);
+});
+
+$(document).ready(function(){
     $(".next").click(function(){
         $("#video").hide();
-        $("#practice").css('top', h/2-$("#signin").height()/2);
-        $("#practice").css('left', w/2-$("#signin").width()/2);
+        $("#practice").css('top', h/2-$("#practice").height()/2);
+        $("#practice").css('left', w/2-$("#practice").width()/2);
         $("#practice").show();
         var coordA = [document.getElementById('ax'), document.getElementById('ay')];
         var coordB = [document.getElementById('bx'), document.getElementById('by')];
@@ -18,15 +27,15 @@ $(document).ready(function(){
         coordB[1].value = rng(0,10);
         coordC[0].value = rng(0,10);
         coordC[1].value = rng(0,10);
-    })
+    });
     
     $(".prev").click(function(){
         $("#video").show();
-        $("#video").css('top', h/2-$("#signin").height()/2);
-        $("#video").css('left', w/2-$("#signin").width()/2);
+        $("#video").css('top', h/2-$("#video").height()/2);
+        $("#video").css('left', w/2-$("#video").width()/2);
         $("#practice").hide();
-    })
-}
+    });
+})
 
 function rng(min,max){
     return Math.floor(Math.random() *(max-min+1))+min;
