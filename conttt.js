@@ -103,14 +103,12 @@ function checker(){
     }
 }
 
-function checkNum() {
-    
-   if(isNaN(String.fromCharCode(event.keyCode)) || event.keyCode==32) {
-       return false;
+function checkNum(event) {
+   if((event.charCode===0 || !isNaN(String.fromCharCode(event.charCode)))&&event.charCode!=32) {
+       return true;
    }
     else {
-        return true;
-        
+        return false;
     }
     
 }
