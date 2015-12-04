@@ -67,10 +67,14 @@ function onCheck(){
     var ansA = document.getElementById('ansa');
     var ansB = document.getElementById('ansb');
     var ansC = document.getElementById('ansc');
-    if(ansA === distance && ansB === distance && ansC === distance3){
+    
+    var differenceA = ansA.value-distance;
+    var differenceB = ansB.value-distance2;
+    var differenceC = ansC.value-distance3;
+    if(Math.abs(differenceA)<=3 && Math.abs(differenceB)<=3 && Math.abs(differenceC)<=3){
         document.getElementById("results").innerHTML = "Correct!"
     }else{
-        document.getElementById("results").innerHTML = "Correct!"
+        document.getElementById("results").innerHTML = "Incorrect"
     }
 }
 
