@@ -112,7 +112,7 @@ function distChecker(){
         var check3 = false;
 
         if(diff(radii[0],x.value)==true){
-            console.log('got');
+            //console.log('got');
             drawCircle(coordA[0].value,coordA[1].value,radii[0]);
             check1 = true;    
         }
@@ -125,7 +125,8 @@ function distChecker(){
             check3 = true;
         }
         if(check1===true&&check2===true&&check3===true){
-            console.log('in there');
+            //console.log('in there');
+            document.getElementById('sub').removeAttribute('disabled');
             div1.innerHTML= 'Mouse Location Unlocked';
             mouse();   
         }
