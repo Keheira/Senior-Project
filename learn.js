@@ -36,13 +36,15 @@
 //        $("#practice").hide();
 //    });
 //})
-
+var coordA;
+var coordB;
+var coordC;
 document.getElementById('check').disabled = true;
 
 function onHit(){
-    var coordA = [document.getElementById('ax'), document.getElementById('ay')];
-    var coordB = [document.getElementById('bx'), document.getElementById('by')];
-    var coordC = [document.getElementById('cx'), document.getElementById('cy')];
+    coordA = [document.getElementById('ax'), document.getElementById('ay')];
+    coordB = [document.getElementById('bx'), document.getElementById('by')];
+    coordC = [document.getElementById('cx'), document.getElementById('cy')];
 
     coordA[0].value = rng(0,10);
     coordA[1].value = rng(0,10);
@@ -55,7 +57,6 @@ function onHit(){
 }
 
 function onCheck(){
-    console.log('I\'ve been clicked')
     var distance = Math.sqrt(Math.pow(coordA[0].value-coordB[0], 2)+Math.pow(coordA[1].value-coordB[0], 2));
     var distance2 = Math.sqrt(Math.pow(coordB[0].value-coordC[0], 2)+Math.pow(coordB[1].value-coordC[0], 2));
     var distance3 = Math.sqrt(Math.pow(coordC[0].value-coordA[0], 2)+Math.pow(coordC[1].value-coordA[0], 2));
@@ -66,8 +67,11 @@ function onCheck(){
     var ansA = document.getElementById('ansa');
     var ansB = document.getElementById('ansb');
     var ansC = document.getElementById('ansc');
-    if(ansA === distance && ansB === distance && ansC === distance3)
+    if(ansA === distance && ansB === distance && ansC === distance3){
         document.getElementById("results").innerHTML = "Correct!"
+    }else{
+        document.getElementById("results").innerHTML = "Correct!"
+    }
 }
 
 function rng(min,max){
