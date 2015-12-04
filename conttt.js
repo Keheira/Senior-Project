@@ -1,40 +1,51 @@
 var clicked = false;
 var ex = 0;
 var ey = 0;
+var radii = [0,0,0];
+var coordA = [document.getElementById('ax'), document.getElementById('ay')];
+var coordB = [document.getElementById('bx'), document.getElementById('by')];
+var coordC = [document.getElementById('cx'), document.getElementById('cy')];
 
 
-function shake(n) {
-var el = document.getElementById("myCanvas");
-if (el.moveBy) {
-for (i = 30; i > 0; i--) {
-for (j = n; j > 0; j--) {
-el.moveBy(0,i);
-el.moveBy(i,0);
-el.moveBy(0,-i);
-el.moveBy(-i,0);
-         }
-      }
-   }
+//function shake(n) {
+//var el = document.getElementById("myCanvas");
+//if (el.moveBy) {
+//for (i = 30; i > 0; i--) {
+//for (j = n; j > 0; j--) {
+//el.moveBy(0,i);
+//el.moveBy(i,0);
+//el.moveBy(0,-i);
+//el.moveBy(-i,0);
+//         }
+//      }
+//   }
+//}
+
+
+function mouse(){
+    var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        
+        canvas.addEventListener('mousemove', function(evt) {
+        var mousePos = getMousePos(canvas, evt);
+        var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+        writeMessage(canvas, message);
+      }, false);
 }
-
-//</script>
 function wei(){
     if(clicked == false){
         var vel = 10;
         var distance = 0;
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
-        canvas.addEventListener('mousemove', function(evt) {
-        var mousePos = getMousePos(canvas, evt);
-        var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
-        writeMessage(canvas, message);
-      }, false);
+        
+        
+        
 
-        var coordA = [document.getElementById('ax'), document.getElementById('ay')];
-        var coordB = [document.getElementById('bx'), document.getElementById('by')];
-        var coordC = [document.getElementById('cx'), document.getElementById('cy')];
+        
+       
         var times = [document.getElementById('ta'),document.getElementById('tb'),document.getElementById('tc')];
-        var radii = [0,0,0];
+        
 
 
         //point A
@@ -71,39 +82,65 @@ function wei(){
         var time = (distance/vel);
         times[0].value = time.toFixed(2);
         radii[0] = times[0].value * vel;
-        ctx.beginPath();
-        ctx.arc(coordA[0].value,coordA[1].value,radii[0],0,Math.PI*2,false);
-        ctx.lineWidth = 5;
-        ctx.strokeStyle = '#003300';
-        ctx.stroke();
-        ctx.closePath();
+
 
         distance = Math.sqrt(Math.pow(coordB[0].value-ex, 2)+Math.pow(coordB[1].value-ey, 2));
         time = (distance/vel);
         times[1].value = time.toFixed(2);
         radii[1] = times[1].value * vel;
-        ctx.beginPath();
-        ctx.arc(coordB[0].value,coordB[1].value,radii[1],0,Math.PI*2,false);
-        ctx.lineWidth = 5;
-        ctx.strokeStyle = '#003300';
-        ctx.stroke();
-        ctx.closePath();
+
         
         distance = Math.sqrt(Math.pow(coordC[0].value-ex, 2)+Math.pow(coordC[1].value-ey, 2));
         time = (distance/vel);
         times[2].value = time.toFixed(2);
         radii[2] = times[2].value * vel;
+
+        
+        console.log('ex: ' + ex);
+        console.log('ey: ' + ey);
+        console.log('dist 1: ' +radii[0]);
+        console.log('dist 2: ' +radii[1]);
+        console.log('dist 3: ' +radii[2]);
+        clicked = true;   
+    }
+}
+function distChecker(){
+    var x = document.getElementById('da');
+    var y = document.getElementById('db');
+    var z = document.getElementById('dc');
+    var check1 = false;
+    var check2 = false;
+    var check3 = false;
+    
+    if(radii[0] == x.value){
+        console.log('got');
+        drawCircle(coordA[0].value,coordA[1].value,radii[0]);
+        check1 = true;    
+    }
+    if(radii[1] == y.value){
+        drawCircle(coordB[0].value,coordB[1].value,radii[1]);
+        check2 = true;
+    }
+    if(radii[2] == z.value){
+        drawCircle(coordC[0].value,coordC[1].value,radii[2]);
+        check3 = true;
+    }
+    if(check1===true&&check2===true&&check3===true){
+        console.log('in there');
+        mouse();   
+    }
+    
+    
+}
+function drawCircle(co,coo,cooo){
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
         ctx.beginPath();
-        ctx.arc(coordC[0].value,coordC[1].value,radii[2],0,Math.PI*2,false);
+        ctx.arc(co,coo,cooo,0,Math.PI*2,false);
         ctx.lineWidth = 5;
         ctx.strokeStyle = '#003300';
         ctx.stroke();
         ctx.closePath();
-        
-        console.log(ex);
-        console.log(ey);
-        clicked = true;   
-    }
 }
 
 function rng(min,max){
@@ -133,7 +170,7 @@ function checker(){
 }
 
 function checkNum(event) {
-   if((event.charCode===0 || !isNaN(String.fromCharCode(event.charCode)))&&event.charCode!=32) {
+   if((event.charCode===0 || !isNaN(String.fromCharCode(event.charCode)))&&event.charCode!=32 ||event.charCode===46) {
        return true;
    }
     else {
@@ -158,27 +195,28 @@ function resett(){
         var userX = document.getElementById('qx');
         var userY = document.getElementById('qy');
         var correct = document.getElementById('qz');
+        var distA = document.getElementById('da');
+        var distB = document.getElementById('db');
+        var distC = document.getElementById('dc');
         userX.value = "";
         userY.value = "";
+        distA.value = "";
+        distB.value = "";
+        distC.value ="";
         correct.innerHTML="";
     }
 }
 function writeMessage(canvas, message) {
-//        var context = canvas.getContext('2d');
-//        context.clearRect(0, 0, canvas.width, canvas.height);
-//        context.font = '18pt Calibri';
-//        context.fillStyle = 'black';
-//        context.fillText(message, 10, 25);
         var divv = document.getElementById('div1');
         divv.innerHTML = message;
       }
 function getMousePos(canvas, evt) {
-    var rect = canvas.getBoundingClientRect();
-    return {
-      x: evt.clientX - rect.left,
-      y: evt.clientY - rect.top
-    };
-}
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
 
 var scream = new Audio();
 scream.src = "man-scream-02.mp3";
@@ -194,9 +232,3 @@ function playBtnSound(num){
     var div1 = document.getElementById("div1");
     div1.innerHTML = "it worked for " + num;
 }
-
-/*function playBtnSound2(num){
-    cheer.play();
-    var div1 = document.getElementById("div1");
-    div1.innerHTML = "it worked for " + num;
-}*/

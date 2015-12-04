@@ -3,15 +3,8 @@
         <title>Epicenter Locator</title>
         <link href="contt.css" type="text/css" rel="stylesheet">
         <link href="main.css" type="text/css" rel="stylesheet">
-    </head>  
+    </head>
 <body>
-    <ul id="menu">
-      <li><a href="#">New Game</a></li>
-      <li><a href="index.html">Distance Formula?</a></li>
-      <li><a href="epicenter.html">Epicenter?</a></li>
-      <li><a href="#">Hint</a></li>
-    </ul>
-    <div>
     <h1 style="color:chocolate">Where's That Earthquake ?!?!</h1>
     <div id="canvasArea">
     <canvas id="myCanvas" width="500" height="400"
@@ -24,35 +17,39 @@
                 <label><b>Point A Coordinates</b></label><br />
                 <label>X:</label><input readonly type="text" id="ax">
                 <label>Y:</label><input readonly type="text" id="ay">
-                <label>Time:</label><input readonly type="text" id="ta"><br/>
+                <label>Time:</label><input readonly type="text" id="ta">
+                <label>Distance to Center:</label><input  type="text" id="da" onkeypress="return checkNum(event)">
+                <input type="button" onclick="distChecker()" value="Check" id="check1">
+                <br/>
                 
                 <label><b>Point B Coordinates</b></label><br />
                 <label>X:</label><input readonly type="text" id="bx">
                 <label>Y:</label><input readonly type="text" id="by">
-                <label>Time:</label><input readonly type="text" id="tb"><br/>
+                <label>Time:</label><input readonly type="text" id="tb">
+                <label>Distance to Center:</label><input  type="text" id="db" onkeypress="return checkNum(event)">
+                <input type="button" onclick="distChecker()" value="Check" id="check2">
+                <br/>
                 
                 <label><b>Point C Coordinates</b></label><br />
                 <label>X:</label><input readonly type="text" id="cx">
                 <label>Y:</label><input readonly type="text" id="cy">
-                <label>Time:</label><input readonly type="text" id="tc"><br/>
+                <label>Time:</label><input readonly type="text" id="tc">
+                <label>Distance to Center:</label><input  type="text" id="dc" onkeypress="return checkNum(event)">
+                <input type="button" onclick="distChecker()" value="Check" id="check3">
+                <br/>
                 
                 <label><b>Earthquake Epicenter</b></label><br />
 
                 <label>X:</label><input type="text" id="qx" onkeypress="return checkNum(event)"> <label>Y:</label><input type="text" id="qy" onkeypress="return checkNum(event)">
                 <h6 id="qz"></h6>
-
-<!--                <div class="options">
-                    <button onclick="wei()">Quake!!!</button>-->
              <nav id="nav1">
                   
-                <input type="button" onclick="playBtnSound(1); wei(); shake(10);" value="Quake!!!">
+                <input type="button" onclick="playBtnSound(1); wei(); " value="Quake!!!">
         
-               <!--  <button onclick="playBtnSound(1)">Quake!!!</button> -->
                 <input type="button" onclick="checker();" value="Submit">
                 <input type="button" onclick="resett();" value="Reset">
             </nav>
                 <div id="div1">Default content</div> 
-                <!--                </div>-->
             </form>
         </div>
     </div>
