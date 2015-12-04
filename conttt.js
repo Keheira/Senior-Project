@@ -134,7 +134,7 @@ function distChecker(){
 function diff(a, b){
     var diff = 0;
     diff = a-b;
-    if(diff<1 && diff>-1){
+    if(Math.abs(diff)<1){
         return true;
     }else{
         return false;

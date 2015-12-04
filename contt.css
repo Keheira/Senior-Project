@@ -38,6 +38,13 @@ ul#menu li a {
 ul#menu li a:hover {
     background-color: orange;
 }
+    div#div1{
+        color: aqua;
+        font-size: 25px;
+    }
+    h2{
+        color:aqua;
+    }
 div#div1{
     color: aqua;
     font-size: 25px;
