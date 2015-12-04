@@ -3,73 +3,18 @@
         <title>Epicenter Locator</title>
         <script src="conttt.js" type="text/javascript"></script>
         <link href="contt.css" type="text/css" rel="stylesheet">
+        <link href="main.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="http://s3.amazonaws.com/codecademy-content/courses/hour-of-code/js/alphabet.js"></script>
-    <script>
-        
-        var scream = new Audio();
-        scream.src = "man-scream-02.mp3";
-        var scream2 = new Audio();
-        scream2.src = "woman-scream-02.mp3";
-        
-        var cheer = new Audio();
-        cheer.src = "applause-3.mp3";
-        
-        function playBtnSound(num){
-        scream.play();  
-        scream2.play();
-            var div1 = document.getElementById("div1");
-            div1.innerHTML = "it worked for " + num;
-        }
-        
-        /*function playBtnSound2(num){
-            cheer.play();
-            var div1 = document.getElementById("div1");
-            div1.innerHTML = "it worked for " + num;
-        }*/
-        </script>
-    </head>
-<style>
-ul#menu {
-    padding: 0;
-}
-
-ul#menu li {
-    display: inline;
-}
-
-ul#menu li a {
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 4px 4px 0 0;
-}
-
-ul#menu li a:hover {
-    background-color: orange;
-}
-    div#div1{
-        color: aqua;
-        font-size: 25px;
-    }
-    h2{
-        color:aqua;
-    }
-</style>
-    
-<div align="center">
-<body style="background-color:rgb(128,0,0)">
-    
-<!--<h2>Where's That Earthquake?!?!</h2>-->
-
-<ul id="menu">
-  <li><a href="main.html">New Game</a></li>
+    </head>  
+<body>
+    <ul id="menu">
+  <li><a href="#">New Game</a></li>
   <li><a href="index.html">Distance Formula?</a></li>
   <li><a href="epicenter.html">Epicenter?</a></li>
   <li><a href="#">Hint</a></li>
-</ul>  
-<body>
+</ul>
+    <div>
     <h1 style="color:chocolate">Where's That Earthquake ?!?!</h1>
     <div id="canvasArea">
     <canvas id="myCanvas" width="500" height="400"

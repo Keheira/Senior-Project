@@ -36,7 +36,8 @@
 //        $("#practice").hide();
 //    });
 //})
-document.getElementById("problem").disabled = true;
+
+document.getElementById('check').disabled = true;
 
 function onHit(){
     var coordA = [document.getElementById('ax'), document.getElementById('ay')];
@@ -49,18 +50,24 @@ function onHit(){
     coordB[1].value = rng(0,10);
     coordC[0].value = rng(0,10);
     coordC[1].value = rng(0,10);
+    
+    document.getElementById('check').disabled = false;
 }
 
 function onCheck(){
-    distance = Math.sqrt(Math.pow(coordA[0].value-coordB[0], 2)+Math.pow(coordA[1].value-coordB[0], 2));
-    distance2 = Math.sqrt(Math.pow(coordB[0].value-coordC[0], 2)+Math.pow(coordB[1].value-coordC[0], 2));
-    distance3 = Math.sqrt(Math.pow(coordC[0].value-coordA[0], 2)+Math.pow(coordC[1].value-coordA[0], 2));
+    console.log('I\'ve been clicked')
+    var distance = Math.sqrt(Math.pow(coordA[0].value-coordB[0], 2)+Math.pow(coordA[1].value-coordB[0], 2));
+    var distance2 = Math.sqrt(Math.pow(coordB[0].value-coordC[0], 2)+Math.pow(coordB[1].value-coordC[0], 2));
+    var distance3 = Math.sqrt(Math.pow(coordC[0].value-coordA[0], 2)+Math.pow(coordC[1].value-coordA[0], 2));
+    console.log("Distance 1 is: " + distance);
+    console.log("Distance 2 is: " + distance2);
+    console.log("Distance 3 is: " + distance3);
     
     var ansA = document.getElementById('ansa');
     var ansB = document.getElementById('ansb');
     var ansC = document.getElementById('ansc');
-    
-    if(ansA === distance && ansB === distance2 && ansC === distance3) document.getElementById("problem").disabled = false;
+    if(ansA === distance && ansB === distance && ansC === distance3)
+        document.getElementById("results").innerHTML = "Correct!"
 }
 
 function rng(min,max){

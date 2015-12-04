@@ -173,9 +173,30 @@ function writeMessage(canvas, message) {
         divv.innerHTML = message;
       }
 function getMousePos(canvas, evt) {
-        var rect = canvas.getBoundingClientRect();
-        return {
-          x: evt.clientX - rect.left,
-          y: evt.clientY - rect.top
-        };
-      }
+    var rect = canvas.getBoundingClientRect();
+    return {
+      x: evt.clientX - rect.left,
+      y: evt.clientY - rect.top
+    };
+}
+
+var scream = new Audio();
+scream.src = "man-scream-02.mp3";
+var scream2 = new Audio();
+scream2.src = "woman-scream-02.mp3";
+
+var cheer = new Audio();
+cheer.src = "applause-3.mp3";
+
+function playBtnSound(num){
+    scream.play();  
+    scream2.play();
+    var div1 = document.getElementById("div1");
+    div1.innerHTML = "it worked for " + num;
+}
+
+/*function playBtnSound2(num){
+    cheer.play();
+    var div1 = document.getElementById("div1");
+    div1.innerHTML = "it worked for " + num;
+}*/

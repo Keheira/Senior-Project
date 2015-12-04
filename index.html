@@ -1,11 +1,11 @@
 <html>
     <head>
-        <link href="main.css" type="text/css" rel="stylesheet">
+        <link href="index.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <ul id="menu">
           <li><a href="main.html">New Game</a></li>
-         <!-- <li><a href="index.html">Distance Formula?</a></li> -->
+          <li><a href="#">Distance Formula?</a></li> 
           <li><a href="epicenter.html">Epicenter?</a></li>
           <li><a href="/php/default.asp">Hint</a></li>
         </ul>
@@ -19,31 +19,32 @@
             <img src="formula.jpg" height="200px"/>
             <div id="points">
                 <div>
-                    <label><b>Point A</b></label><br /><br />
+                    <label><b>Point A</b></label><br />
                     <label>X:</label><input readonly type="text" id="ax">
                     <label>Y:</label><input readonly type="text" id="ay">
                 </div>
+                <br />
                 <div>
-                    <label><b>Point B</b></label><br /><br />
+                    <label><b>Point B</b></label><br />
                     <label>X:</label><input readonly type="text" id="bx">
                     <label>Y:</label><input readonly type="text" id="by">
                 </div>
+                <br />
                 <div>
-                    <label><b>Point C</b></label><br /><br />
+                    <label><b>Point C</b></label><br />
                     <label>X:</label><input readonly type="text" id="cx">
                     <label>Y:</label><input readonly type="text" id="cy">
                 </div>
             </div>
             <br />
-            <button onclick="onHit">Generate Points</button>
+            <button onclick="onHit()">Generate Points</button>
             <br /><br />
             <form>
                 <div id="disAB"><label>What is the distance between point A and B?</label>&nbsp;&nbsp;<input type="number" id="ansa" required></div>
                 <div id="disBC"><label>What is the distance between point B and C?</label>&nbsp;&nbsp;<input type="number" id="ansb" required></div>
                 <div id="disCA"><label>What is the distance between point C and A?</label>&nbsp;&nbsp;<input type="number" id="ansc" required></div>
                 <br />
-                <button onclick="onCheck">Check</button>
-                <button onclick="location.href = 'main.html';" id="problem">Next</button>
+                <button onclick="onCheck()" id="check">Check</button>
             </form>
         </div>
         <script src="learn.js" type="text/javascript"></script>
