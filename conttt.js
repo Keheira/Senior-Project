@@ -39,14 +39,7 @@ function wei(){
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         
-        
-        
-
-        
-       
         var times = [document.getElementById('ta'),document.getElementById('tb'),document.getElementById('tc')];
-        
-
 
         //point A
         coordA[0].value = rng(100,200);
@@ -104,6 +97,7 @@ function wei(){
         clicked = true;   
     }
 }
+
 function distChecker(){
     var x = document.getElementById('da');
     var y = document.getElementById('db');
@@ -130,8 +124,8 @@ function distChecker(){
         mouse();   
     }
     
-    
 }
+
 function drawCircle(co,coo,cooo){
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
@@ -230,6 +224,5 @@ cheer.src = "applause-3.mp3";
 function playBtnSound(num){
     scream.play();  
     scream2.play();
-    var div1 = document.getElementById("div1");
-    div1.innerHTML = "it worked for " + num;
+    
 }
