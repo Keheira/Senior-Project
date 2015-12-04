@@ -220,6 +220,7 @@ function getMousePos(canvas, evt) {
 
 var scream = new Audio();
 scream.src = "man-scream-02.mp3";
+scream.duration = 3000;
 var scream2 = new Audio();
 scream2.src = "woman-scream-02.mp3";
 
