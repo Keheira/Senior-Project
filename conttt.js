@@ -42,8 +42,8 @@ function wei(){
         var times = [document.getElementById('ta'),document.getElementById('tb'),document.getElementById('tc')];
 
         //point A
-        coordA[0].value = rng(100,200);
-        coordA[1].value = rng(100,200);
+        coordA[0].value = rng(100,300);
+        coordA[1].value = rng(100,300);
         ctx.beginPath();
         ctx.fillStyle = "#0000FF";
         ctx.arc(coordA[0].value,coordA[1].value,5,0,Math.PI*2);
@@ -51,43 +51,45 @@ function wei(){
         ctx.closePath();
 
         //point B
-        coordB[0].value = rng(100,200);
-        coordB[1].value = rng(100,200);
+        coordB[0].value = rng(100,300);
+        coordB[1].value = rng(100,300);
         ctx.beginPath();
         ctx.arc(coordB[0].value,coordB[1].value,5,0,Math.PI*2);
         ctx.fill();
         ctx.closePath();
 
         //point C
-        coordC[0].value = rng(100,200);
-        coordC[1].value = rng(100,200);
+        coordC[0].value = rng(100,300);
+        coordC[1].value = rng(100,300);
         ctx.beginPath();
         ctx.arc(coordC[0].value,coordC[1].value,5,0,Math.PI*2);
         ctx.fill();
         ctx.closePath();
 
         //point Epicenter
-        ex = rng(100,200);
-        ey = rng(100,200);
+        ex = rng(100,300);
+        ey = rng(100,300);
         
         //calculate times
         distance = Math.sqrt(Math.pow(coordA[0].value-ex, 2)+Math.pow(coordA[1].value-ey, 2));
         var time = (distance/vel);
         times[0].value = time.toFixed(2);
-        radii[0] = times[0].value * vel;
+        var radius = times[0].value * vel;
+        radii[0] = radius.toFixed(3);
 
 
         distance = Math.sqrt(Math.pow(coordB[0].value-ex, 2)+Math.pow(coordB[1].value-ey, 2));
         time = (distance/vel);
         times[1].value = time.toFixed(2);
-        radii[1] = times[1].value * vel;
+        radius = times[1].value * vel;
+        radii[1] = radius.toFixed(3);
 
         
         distance = Math.sqrt(Math.pow(coordC[0].value-ex, 2)+Math.pow(coordC[1].value-ey, 2));
         time = (distance/vel);
         times[2].value = time.toFixed(2);
-        radii[2] = times[2].value * vel;
-
+        radius = times[2].value * vel;
+        radii[2] = radius.toFixed(3);
         
         console.log('ex: ' + ex);
         console.log('ey: ' + ey);
@@ -98,32 +100,45 @@ function wei(){
     }
 }
 
+
 function distChecker(){
-    var x = document.getElementById('da');
-    var y = document.getElementById('db');
-    var z = document.getElementById('dc');
-    var check1 = false;
-    var check2 = false;
-    var check3 = false;
-    
-    if(radii[0] == x.value){
-        console.log('got');
-        drawCircle(coordA[0].value,coordA[1].value,radii[0]);
-        check1 = true;    
+    if(clicked==true){
+        var x = document.getElementById('da');
+        var y = document.getElementById('db');
+        var z = document.getElementById('dc');
+        var div1 = document.getElementById('div1');
+        var check1 = false;
+        var check2 = false;
+        var check3 = false;
+
+        if(diff(radii[0],x.value)==true){
+            console.log('got');
+            drawCircle(coordA[0].value,coordA[1].value,radii[0]);
+            check1 = true;    
+        }
+        if(diff(radii[1],y.value)==true){
+            drawCircle(coordB[0].value,coordB[1].value,radii[1]);
+            check2 = true;
+        }
+        if(diff(radii[2],z.value)==true){
+            drawCircle(coordC[0].value,coordC[1].value,radii[2]);
+            check3 = true;
+        }
+        if(check1===true&&check2===true&&check3===true){
+            console.log('in there');
+            div1.innerHTML= 'Mouse Location Unlocked';
+            mouse();   
+        }
     }
-    if(radii[1] == y.value){
-        drawCircle(coordB[0].value,coordB[1].value,radii[1]);
-        check2 = true;
+}
+function diff(a, b){
+    var diff = 0;
+    diff = a-b;
+    if(diff<1 && diff>-1){
+        return true;
+    }else{
+        return false;
     }
-    if(radii[2] == z.value){
-        drawCircle(coordC[0].value,coordC[1].value,radii[2]);
-        check3 = true;
-    }
-    if(check1===true&&check2===true&&check3===true){
-        console.log('in there');
-        mouse();   
-    }
-    
 }
 
 function drawCircle(co,coo,cooo){
@@ -192,6 +207,8 @@ function resett(){
         var distA = document.getElementById('da');
         var distB = document.getElementById('db');
         var distC = document.getElementById('dc');
+        var div = document.getElementById('div1');
+        div.innerHTML="";
         userX.value = "";
         userY.value = "";
         distA.value = "";
@@ -214,6 +231,7 @@ function getMousePos(canvas, evt) {
 
 var scream = new Audio();
 scream.src = "man-scream-02.mp3";
+scream.duration = 3000;
 var scream2 = new Audio();
 scream2.src = "woman-scream-02.mp3";
 
