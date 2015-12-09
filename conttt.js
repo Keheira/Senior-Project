@@ -7,21 +7,6 @@ var coordB = [document.getElementById('bx'), document.getElementById('by')];
 var coordC = [document.getElementById('cx'), document.getElementById('cy')];
 
 
-//function shake(n) {
-//var el = document.getElementById("myCanvas");
-//if (el.moveBy) {
-//for (i = 30; i > 0; i--) {
-//for (j = n; j > 0; j--) {
-//el.moveBy(0,i);
-//el.moveBy(i,0);
-//el.moveBy(0,-i);
-//el.moveBy(-i,0);
-//         }
-//      }
-//   }
-//}
-
-
 function mouse(){
     var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
@@ -103,31 +88,44 @@ function wei(){
 
 function distChecker(){
     if(clicked==true){
-        var x = document.getElementById('da');
-        var y = document.getElementById('db');
-        var z = document.getElementById('dc');
+        var distA = document.getElementById('da');
+        var distB = document.getElementById('db');
+        var distC = document.getElementById('dc');
         var div1 = document.getElementById('div1');
         var check1 = false;
         var check2 = false;
         var check3 = false;
 
-        if(diff(radii[0],x.value)==true){
-            //console.log('got');
+        if(diff(radii[0],distA.value)==true){
             drawCircle(coordA[0].value,coordA[1].value,radii[0]);
-            check1 = true;    
+            check1 = true;
+            distA.style.color = "green";
+            distA.readOnly = true;
+        }else{
+            if(distA.value!="")
+            distA.style.color = "red";   
         }
-        if(diff(radii[1],y.value)==true){
+        if(diff(radii[1],distB.value)==true){
             drawCircle(coordB[0].value,coordB[1].value,radii[1]);
+            distB.readOnly = true;
             check2 = true;
+            distB.style.color = "green";
+        }else{
+            if(distB.value!="")
+            distB.style.color = "red";   
         }
-        if(diff(radii[2],z.value)==true){
+        if(diff(radii[2],distC.value)==true){
             drawCircle(coordC[0].value,coordC[1].value,radii[2]);
             check3 = true;
+            distC.readOnly =true;
+            distC.style.color = "green";
+        }else{
+            if(distC.value!="")
+            distC.style.color = "red";   
         }
         if(check1===true&&check2===true&&check3===true){
-            //console.log('in there');
             document.getElementById('sub').removeAttribute('disabled');
-            div1.innerHTML= 'Mouse Location Unlocked';
+            div1.innerHTML= 'Map Location Unlocked';
             mouse();   
         }
     }
